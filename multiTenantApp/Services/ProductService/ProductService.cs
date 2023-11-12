@@ -31,7 +31,7 @@ namespace multiTenantApp.Services.ProductService
         {
             var product = new Product();
             product.Name = request.Name;
-            product.Price = request.Price;
+            product.Description = request.Description;
 
             _context.Add(product);
             _context.SaveChanges();

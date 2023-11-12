@@ -11,7 +11,7 @@ using multiTenantApp.Models;
 namespace multiTenantApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230518215945_Initial")]
+    [Migration("20231112193144_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -32,12 +32,13 @@ namespace multiTenantApp.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Name")
+                    b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TenantId")
                         .IsRequired()

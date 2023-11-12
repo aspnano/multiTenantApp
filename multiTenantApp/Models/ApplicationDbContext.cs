@@ -30,7 +30,7 @@ namespace multiTenantApp.Models
         public override int SaveChanges()
         {
 
-            foreach (var entry in ChangeTracker.Entries<Product>().ToList()) // Write tenant Id to table
+            foreach (var entry in ChangeTracker.Entries<IMustHaveTenant>().ToList()) // Write tenant Id to table
             {
                 switch (entry.State)
                 {
